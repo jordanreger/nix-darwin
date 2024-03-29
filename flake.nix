@@ -28,23 +28,31 @@
         inherit username system;
       };
   in {
-    darwinConfigurations."Jordans-MacBook-Pro" = darwin.lib.darwinSystem {
-      inherit system specialArgs;
+  
+    darwinConfigurations = {
+      
+      "Jordans-MacBook-Pro" = darwin.lib.darwinSystem {
+        inherit system specialArgs;
 
-      modules = [
-        ./darwin
+        modules = [
+          ./darwin
 
-        mac-app-util.darwinModules.default
+          mac-app-util.darwinModules.default
 
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = specialArgs;
-            useUserPackages = true;
-            users.${username} = import ./home;
-          };
-        }
-      ];
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = specialArgs;
+              useUserPackages = true;
+              users.${username} = import ./home;
+            };
+          }
+        ];
+      };
+
     };
+
+    # nixosConfigurations
+
   };
 }
