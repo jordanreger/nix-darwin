@@ -27,4 +27,44 @@
   ];
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleICUForce24HourTime = true;
+      AppleInterfaceStyle = "Dark";
+      AppleMeasurementUnits = "Centimeters";
+      AppleMetricUnits = 1;
+      AppleTemperatureUnit = "Celsius";
+      NSAutomaticCapitalizationEnabled = false;
+      NSAutomaticPeriodSubstitutionEnabled = false;
+      # Natural scrolling
+      "com.apple.swipescrolldirection" = true;
+      "com.apple.trackpad.enableSecondaryClick" = true;
+      # Enable right click
+      "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
+    };
+    dock = {
+      autohide = true;
+      show-recents = false;
+      tilesize = 44;
+      wvous-br-corner = 14; # Quick Note
+    };
+
+    finder = {
+      FXEnableExtensionChangeWarning = false;
+      FXPreferredViewStyle = "nlsv"; # List view
+      ShowPathbar = true;
+    };
+
+    menuExtraClock = {
+      Show24Hour = true;
+      ShowDate = 0;
+    };
+
+    trackpad = {
+      TrackpadRightClick = true;
+    };
+  };
+
+  time.timeZone = "America/New_York";
 }

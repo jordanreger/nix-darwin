@@ -1,7 +1,8 @@
-{ pkgs, username, ... }:
+{ pkgs, username, mac-app-util, ... }:
 
 {
   imports = [
+    mac-app-util.homeManagerModules.default
     ./alacritty.nix
     ./git.nix
     ./go.nix
