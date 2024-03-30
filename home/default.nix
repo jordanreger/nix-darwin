@@ -3,7 +3,7 @@
 {
   imports = [
     mac-app-util.homeManagerModules.default
-    ./alacritty.nix
+    #./alacritty.nix
     ./git.nix
     ./go.nix
     ./helix.nix
@@ -21,6 +21,7 @@
       lazygit
       gh
       gopls
+      iterm2
       ranger
       zellij
     ];
