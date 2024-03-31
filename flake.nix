@@ -28,7 +28,8 @@
         inherit username system;
       };
   in {
-  
+
+    # MacOS
     darwinConfigurations = {
       
       "Jordans-MacBook-Pro" = darwin.lib.darwinSystem {
@@ -52,7 +53,7 @@
 
     };
 
-    # nixosConfigurations
+    # NixOS
 
   };
 }

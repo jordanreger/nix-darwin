@@ -19,6 +19,7 @@
       delve
       eza
       lazygit
+      glow
       gh
       gopls
       iterm2
