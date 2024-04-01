@@ -18,18 +18,23 @@
     packages = with pkgs; [
       delve
       eza
-      lazygit
-      glow
       gh
+      glow
       gopls
       iterm2
+      lazygit
       ranger
+      rustup
       zellij
     ];
 
     sessionVariables = {
       EDITOR = "hx";
     };
+
+    sessionPath = [
+      "$GOBIN"
+    ];
 
     shellAliases = {
       lg = "lazygit";
