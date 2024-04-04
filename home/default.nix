@@ -18,10 +18,11 @@
     packages = with pkgs; [
       delve
       eza
+      flyctl
       gh
       glow
       gopls
-      iterm2
+      #iterm2
       lazygit
       ranger
       rustup
@@ -38,7 +39,7 @@
 
     shellAliases = {
       lg = "lazygit";
-      ls = "exa --icons";
+      ls = "exa";
       nix-config = "cd ~/.config/nix";
       nix-gc = "nix-store --gc";
       nix-rebuild = "darwin-rebuild switch --flake ~/.config/nix";
@@ -46,6 +47,8 @@
 
     stateVersion = "23.11";
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
 }

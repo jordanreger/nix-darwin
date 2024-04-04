@@ -12,7 +12,7 @@
     };
 
     settings = {
-      theme = "transparent_rasmus";
+      theme = "base16_terminal";
       editor = {
         line-number = "relative";
         rulers = [60 80];

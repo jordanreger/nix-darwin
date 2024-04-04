@@ -21,10 +21,10 @@
     home = "/Users/${username}";
   };
 
-  fonts.fontDir.enable = true;
-  fonts.fonts = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  #fonts.fontDir.enable = true;
+  #fonts.fonts = [
+  #  (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  #];
 
   security.pam.enableSudoTouchIdAuth = true;
 
