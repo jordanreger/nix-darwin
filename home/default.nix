@@ -2,7 +2,6 @@
 
 {
   imports = [
-    mac-app-util.homeManagerModules.default
     #./alacritty.nix
     ./git.nix
     ./go.nix
@@ -17,6 +16,7 @@
     # packages without their own file
     packages = with pkgs; [
       delve
+      deno
       eza
       flyctl
       gh
@@ -24,8 +24,13 @@
       gopls
       #iterm2
       lazygit
+      marksman
+      neofetch
+      plan9port
       ranger
       rustup
+      #vscode
+      vscode-langservers-extracted
       zellij
     ];
 

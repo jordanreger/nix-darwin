@@ -2,22 +2,26 @@
   description = "Jordan Reger's Darwin configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
     
-    darwin.url = "github:lnl7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
     darwin,
-    mac-app-util,
     ...
   }: let
     username = "jordan";
@@ -37,8 +41,6 @@
 
         modules = [
           ./darwin
-
-          mac-app-util.darwinModules.default
 
           home-manager.darwinModules.home-manager
           {
