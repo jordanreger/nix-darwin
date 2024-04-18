@@ -19,6 +19,8 @@
       eza
       flyctl
       gh
+      wget
+      plan9port
 
       # languages
       deno
@@ -33,10 +35,13 @@
 
     sessionVariables = {
       EDITOR = "hx";
+      PLAN9 = "${pkgs.plan9port}/plan9";
     };
 
     sessionPath = [
       "$GOBIN"
+      "$HOME/.deno/bin"
+      "$PLAN9/bin"
     ];
 
     shellAliases = {
