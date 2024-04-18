@@ -22,6 +22,7 @@
         { name = "go"; auto-format = true; }
         { name = "rust"; auto-format = true; }
         { name = "javascript"; language-servers = ["deno-lsp"]; auto-format = true; }
+        { name = "typescript"; language-servers = ["deno-lsp"]; auto-format = true; }
       ];
     };
 

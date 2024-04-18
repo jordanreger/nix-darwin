@@ -1,8 +1,7 @@
-{ pkgs, username, mac-app-util, ... }:
+{ pkgs, username, ... }:
 
 {
   imports = [
-    #./alacritty.nix
     ./git.nix
     ./go.nix
     ./helix.nix
@@ -15,23 +14,21 @@
 
     # packages without their own file
     packages = with pkgs; [
-      delve
-      deno
+
+      # cmds
       eza
       flyctl
       gh
-      glow
-      gopls
-      #iterm2
-      lazygit
-      marksman
-      neofetch
-      plan9port
-      ranger
+
+      # languages
+      deno
       rustup
-      #vscode
+
+      # LSPs
+      gopls
+      delve
+      marksman
       vscode-langservers-extracted
-      zellij
     ];
 
     sessionVariables = {
@@ -43,7 +40,7 @@
     ];
 
     shellAliases = {
-      lg = "lazygit";
+      lg = "git status";
       ls = "exa";
       nix-config = "cd ~/.config/nix";
       nix-gc = "nix-store --gc";
